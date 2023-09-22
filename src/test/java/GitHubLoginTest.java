@@ -16,6 +16,15 @@ public class GitHubLoginTest {
     public GitHubLoginTest() {
     }
 
+
+     /*   This method is validating that user can log in with valid mail and password.
+        Steps
+         1. Open https://github.com/login page
+         2. Input valid email
+         3. Input valid password
+         4. Click on 'Sign In' button
+         5. Validate user is  logged in and the user's page is being displayed. */
+
     @Test
     public void validLoginEntering() {
         driver = WebDriverUtil.getWebDriver();
@@ -30,6 +39,15 @@ public class GitHubLoginTest {
         WebDriverUtil close = new WebDriverUtil();
         WebDriverUtil.closeDriver();
     }
+
+
+ /*   This method is checking if avatar button is clickable after entering the homepage.
+        Steps
+         1. Open https://github.com/login page
+         2. Input valid email
+         3. Input valid password
+         4. Click on 'Sign In' button
+         5. Find avatar and click it */
 
     @Test
     public void avatarChecking() {
@@ -51,6 +69,14 @@ public class GitHubLoginTest {
 
     }
 
+
+    /* This method is validating that user cannot log in with invalid password.\
+            Steps
+             1. Open https://github.com/login page
+             2. Input valid email
+             3. Input invalid password
+             4. Click on 'Sign In' button
+             5. Validate user is not logged in and "Incorrect username or password" error is displayed */
     @Test
     public void invalidPasswordEntering() {
         driver = WebDriverUtil.getWebDriver();
@@ -66,6 +92,12 @@ public class GitHubLoginTest {
         WebDriverUtil.closeDriver();
     }
 
+    /*    This method is validating that user cannot log in with empty password.
+          Steps
+           1. Open https://github.com/login page
+           2. Input valid email
+           3. Click on 'Sign In' button
+           4. Validate user is not logged in and "Incorrect username or password" error is displayed */
     @Test
     public void emptyPasswordChecking() {
        driver = WebDriverUtil.getWebDriver();
@@ -81,6 +113,14 @@ public class GitHubLoginTest {
         driver.quit();
     }
 
+
+    /*  This method is validating that user can log in with valid mail and password with different browser( FireFox).
+           Steps
+            1. Open https://github.com/login page
+            2. Input valid email
+            3. Input valid password
+            4. Click on 'Sign In' button
+            5. Validate user is  logged in and the user's page is being displayed. */
     @Test
     public void validLoginEntering1() {
         System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
@@ -106,6 +146,13 @@ public class GitHubLoginTest {
         driver.quit();
     }
 
+    /*   This method is checking if avatar button is clickable after entering the homepage.(FireFox)
+            Steps
+             1. Open https://github.com/ page
+             2. Input valid email
+             3. Input valid password
+             4. Click on 'Sign In' button
+             5. Find avatar and click it */
     @Test
     public void avatarChecking1() {
         System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
@@ -129,6 +176,13 @@ public class GitHubLoginTest {
         driver.quit();
     }
 
+    /*   This method is validating that user cannot log in with invalid password with different browser ( FireFox ).
+       Steps
+        1. Open https://github.com/login page
+        2. Input valid email
+        3. Input invalid password
+        4. Click on 'Sign In' button
+        5. Validate user is not logged in and "Incorrect username or password" error is displayed */
     @Test
     public void invalidPasswordEntering1() {
         driver = WebDriverUtil.getWebDriver();
@@ -149,6 +203,12 @@ public class GitHubLoginTest {
         driver.quit();
     }
 
+    /*  This method is validating that user cannot log in with empty password with different browser ( FireFox ).
+       Steps
+        1. Open https://github.com/login page
+        2. Input valid email
+        3. Click on 'Sign In' button
+        4. Validate user is not logged in and "Incorrect username or password" error is displayed */
     @Test
     public void emptyPasswordChecking1() {
         System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
